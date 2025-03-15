@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="quiz-container">
-        <!-- Quiz Sections -->
         <div class="quiz-main">
+            <div class="start-screen">
+                <h1>Quiz Time!</h1>
+                <p>Test your knowledge and try to beat the high score!</p>
+                <button id="startBtn">Start Quiz</button>
+            </div>
+            
+
             <header class="quiz-header">
                 <h1>Quiz App</h1>
             </header>
-            
+
             <div class="progress-indicator">
-                <span class="current-question"></span>
-                <span class="total-questions"></span>
+                <span class="current-question">Question: <span class="current">1</span></span>
+                <span class="total-questions">of <span class="total">10</span></span>
             </div>
 
             <div class="question-display">
-                <!-- Questions will be rendered here -->
+                <div class="question-text">
+                    <!-- Questions will be inserted here -->
+                </div>
+                <div class="answer-options">
+                    <!-- Answer options will be dynamically added here -->
+                </div>
             </div>
 
             <div class="answer-controls">
-                <!-- Answer buttons will be added here -->
+                <!-- Answer Buttons Section -->
+                <div class="answer-buttons">
+                    <button class="answer-btn" data-answer="A">Option A</button>
+                    <button class="answer-btn" data-answer="B">Option B</button>
+                    <button class="answer-btn" data-answer="C">Option C</button>
+                    <button class="next-btn">Next Question</button>
+                </div>
             </div>
-        </div>
 
-        <!-- High Scores Section -->
-        <div class="high-scores">
-            <h2>High Scores</h2>
-            <ul class="high-scores-list">
-                <!-- High scores will be populated here -->
-            </ul>
-        </div>
+            <!-- High Scores Section -->
+            <div class="high-scores">
+                <h2>High Scores</h2>
+                <div id="scoreList">
+                    <!-- High scores will be dynamically populated here -->
+                </div>
+            </div>
 
-        <!-- Start Screen -->
-        <div class="start-screen">
-            <h2>Welcome to the Quiz!</h2>
-            <button class="start-btn">Start Quiz</button>
-        </div>
-
-        <!-- Results Screen -->
-        <div class="results-screen">
-            <h2>Quiz Complete!</h2>
-            <p class="final-score"></p>
-            <button class="retry-btn">Retry</button>
-        </div>
-    </div>
+            <!-- Results Screen -->
+            <div class="results-screen">
+                <h2>Great job!</h2>
+                <p>Your final score is: <span id="finalScore"></span></p>
+                <button id="retryBtn">Retry</button>
+                <button id="viewHighScoresBtn">View High Scores</button>
+            </div>
 </body>
+
 </html>
