@@ -1,19 +1,254 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-}
-
 body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+}
+
+/* Quiz Container */
+.quiz-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Start Screen */
+.start-screen {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.start-screen h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.start-screen p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.start-screen button {
+    background: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.start-screen button:hover {
+    background: #ff3b2f;
+    transform: scale(1.05);
+}
+
+/* Quiz Header */
+.quiz-header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.progress-indicator span {
+    font-weight: bold;
+}
+
+/* Question Display */
+.question-display {
+    margin-bottom: 20px;
+}
+
+.question-text {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.answer-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.answer-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.answer-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.answer-btn[data-answer]:hover {
+    background: #4caf50;
+}
+
+/* Next Button */
+.next-btn {
+    background: #2575fc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.next-btn:hover {
+    background: #1a5bbf;
+    transform: scale(1.05);
+}
+
+/* High Scores Section */
+.high-scores {
+    margin-top: 30px;
+}
+
+.high-scores h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#scoreList {
+    list-style: none;
+    padding: 0;
+}
+
+#scoreList li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+/* Results Screen */
+.results-screen {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.results-screen h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.results-screen p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.results-screen button {
+    background: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin: 5px;
+}
+
+.results-screen button:hover {
+    background: #ff3b2f;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quiz-container {
+        padding: 15px;
+    }
+
+    .start-screen h1 {
+        font-size: 2rem;
+    }
+
+    .quiz-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .question-text {
+        font-size: 1.2rem;
+    }
+
+    .answer-options {
+        grid-template-columns: 1fr;
+    }
+
+    .answer-btn {
+        padding: 10px;
+    }
+
+    .high-scores h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .start-screen h1 {
+        font-size: 1.8rem;
+    }
+
+    .quiz-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .question-text {
+        font-size: 1rem;
+    }
+
+    .answer-btn {
+        font-size: 0.9rem;
+    }
+
+    .next-btn {
+        font-size: 0.9rem;
+    }
+
+    .high-scores h2 {
+        font-size: 1.3rem;
+    }
 }
